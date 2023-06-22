@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const stripe = require('stripe')(
-    ''
+    'sk_test_51NLukIDJpb5c4dYONtHVhJLGKSM2Ix8GwoNsdXOjWldccx0cpizF5n6gwq7umViQXkW1gpl7DUC5RMXfXjloyMAY00xoTsfhCF'
 );
 
 router.post('/intents', async (req, res) => {
