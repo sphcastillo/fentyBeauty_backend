@@ -1,11 +1,28 @@
 const { MongoClient } = require('mongodb');
 const uri = 
-'mongodb+srv://sphcastillo:me8WohimZzQ9aH4h@cluster1.bdg9slc.mongodb.net/?retryWrites=true&w=majority';
+'mongodb+srv://sphcastillo:8bGMi2jzoEaPdBAU@cluster0.uxopqfa.mongodb.net/?retryWrites=true&w=majority';
 
-const client = new MongoClient(uri);
+let client;
 
-const database = client.db('test');
-const products = database.collection('products');
-const orders = database.collection('orders');
+const getDB = () => {
+    if(!client){
+        console.log("Creating a new client!");
+        client = new MongoClient(uri);
+    } else {
+        console.log('Reusing the old client');
+    }
 
-module.exports = { products, orders }
+    const database = client.db('shop');
+    const products = database.collection('products');
+    const orders = database.collection('orders');
+
+    return {
+        products,
+        orders,
+    }
+}
+
+
+
+
+module.exports = getDB;
