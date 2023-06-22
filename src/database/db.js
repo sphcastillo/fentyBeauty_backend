@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
 const uri = 
-'mongodb+srv://sphcastillo:8bGMi2jzoEaPdBAU@cluster0.uxopqfa.mongodb.net/?retryWrites=true&w=majority';
+'mongodb+srv://sphcastillo:9y7vwOHE1MXKj1Ax@cluster2023.zlelcdl.mongodb.net/?retryWrites=true&w=majority';
 
 let client;
 
@@ -12,7 +12,7 @@ const getDB = () => {
         console.log('Reusing the old client');
     }
 
-    const database = client.db('shop');
+    const database = client.db('store');
     const products = database.collection('products');
     const orders = database.collection('orders');
 
