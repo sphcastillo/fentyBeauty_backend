@@ -4,6 +4,9 @@ const orderRoutes = require('./router/orderRoutes');
 const paymentRoutes = require("./router/paymentRoutes");
 const bodyParser = require('body-parser');
 
+require('dotenv').config();
+
+
 const app = express();
 const PORT = 3000;
 
